@@ -1,25 +1,25 @@
 name: CI
 
 on:
-
+  
   push:
-    branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
-
   workflow_dispatch:
 
 jobs:
-
-  build:
   
-  runs-on: ubuntu-latest
+  build:
+    
+    runs-on: ubuntu-latest
 
-  steps:
-  |
-    - uses: actions/checkout@v3
+    steps:
+    
+      - uses: actions/checkout@v3
 
-    - name: Run a multi-line script
-      run: |
-        echo Add other actions to build,
-        echo test, and deploy your project.
+      - name: Build
+        run: |
+          echo "Building"
+
+      - name: SonarCloud Analysis
+        run: |
+          chmod +x gradlew
+          ./gradlew build sonar -Dsonar.token=${{ secrets.TOKEN_SONAR }}
