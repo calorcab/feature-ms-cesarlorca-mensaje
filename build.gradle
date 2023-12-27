@@ -42,8 +42,7 @@ sonar {
     property "sonar.projectKey", "calorcab_feature-ms-cesarlorca-mensaje"
     property "sonar.organization", "calorcab"
     property "sonar.host.url", "https://sonarcloud.io/"
-    property "sonar.projectName", "feature-ms-cesarlorca-mensaje"
-  }
+      }
 }
 
 test {
